@@ -1,7 +1,11 @@
 package vercel2go
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
-func hello() {
-	fmt.Println("hello world")
+func hello(rw http.ResponseWriter, req *http.Request) {
+	msg := req.URL.Query().Get("msg")
+	fmt.Fprint(rw, msg)
 }
