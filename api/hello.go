@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func hello(rw http.ResponseWriter, req *http.Request) {
+func Hello(rw http.ResponseWriter, req *http.Request) {
 	msg := req.URL.Query().Get("msg")
 	fmt.Fprint(rw, msg)
 }
